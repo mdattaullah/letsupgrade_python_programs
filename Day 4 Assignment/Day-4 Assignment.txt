@@ -1,0 +1,35 @@
+
+Assignment Day 4
+Que 1 -> Write a program to open a file and write "I love Lets Upgrade" and close it, read again, then append data and close it.
+In [8]:
+mkb = open("LetsUpgrade.txt",'w')
+mkb.write("I love LetsUpgrade")
+mkb.close()
+In [9]:
+mkb = open("LetsUpgrade.txt",'r')
+data = mkb.read()
+mkb.close()
+In [10]:
+data
+Out[10]:
+'I love LetsUpgrade'
+In [13]:
+mkb = open("LetsUpgrade.txt", 'a')
+mkb.write("\nI love Python too")
+mkb.close()
+Que 2 -> Write a function which returns the factorial of any integer number given.
+In [6]:
+def factorial(num):
+    if num==1:
+        return num
+    else:
+        return num*factorial(num-1)
+num = int(input("Enter a number-: "))
+if num<0:
+    print("Factorial can not be found for negative numbers")
+elif num==0:
+    print("Factorial of 0 is 1")
+else:
+    print("Factorial of", num, "is-:",factorial(num))
+Enter a number-: 6
+Factorial of 6 is-: 720
