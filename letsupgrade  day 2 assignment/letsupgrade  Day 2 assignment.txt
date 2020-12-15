@@ -1,0 +1,123 @@
+Assignment Day 2
+Que 1-> 5 different functions of strings
+In [76]:
+name = "manglesh kumar barnwal"
+dept = "MECHANICAL"
+string = "*"
+In [38]:
+name.upper()
+Out[38]:
+'MANGLESH KUMAR BARNWAL'
+In [39]:
+dept.lower()
+Out[39]:
+'mechanical'
+In [40]:
+name +" "+ dept
+Out[40]:
+'manglesh kumar barnwal MECHANICAL'
+In [41]:
+name.capitalize()
+Out[41]:
+'Manglesh kumar barnwal'
+In [77]:
+string.join(name)
+Out[77]:
+'m*a*n*g*l*e*s*h* *k*u*m*a*r* *b*a*r*n*w*a*l'
+In [67]:
+name.split()
+Out[67]:
+['manglesh', 'kumar', 'barnwal']
+Que 2-> 5 different functions of list
+In [98]:
+lst = [1,2,3,4,5,"ashish","shweta",6.6,9.9]
+In [99]:
+lst
+Out[99]:
+[1, 2, 3, 4, 5, 'ashish', 'shweta', 6.6, 9.9]
+In [100]:
+lst.append("endgame")
+In [101]:
+lst
+Out[101]:
+[1, 2, 3, 4, 5, 'ashish', 'shweta', 6.6, 9.9, 'endgame']
+In [102]:
+lst.insert(2,5.5)
+In [103]:
+lst
+Out[103]:
+[1, 2, 5.5, 3, 4, 5, 'ashish', 'shweta', 6.6, 9.9, 'endgame']
+In [104]:
+lst.remove(5)
+In [105]:
+lst
+Out[105]:
+[1, 2, 5.5, 3, 4, 'ashish', 'shweta', 6.6, 9.9, 'endgame']
+In [106]:
+lst.reverse()
+In [107]:
+lst
+Out[107]:
+['endgame', 9.9, 6.6, 'shweta', 'ashish', 4, 3, 5.5, 2, 1]
+In [110]:
+lst.clear()
+In [111]:
+lst
+Out[111]:
+[]
+Que 3-> 5 different functions of dictionary
+In [17]:
+dit = {"key":"value", "key1":1.1, "key2":2.2, "key3":3.3, "key4":4.4}
+ditrcd = {"Name":"Manglesh", "age":23, "email":"manglesh007@gmail.com"}
+In [118]:
+dit["key2"]
+Out[118]:
+2.2
+In [119]:
+ditrcd.get("age")
+Out[119]:
+23
+In [2]:
+dit.clear()
+In [3]:
+dit
+Out[3]:
+{}
+In [5]:
+dit
+Out[5]:
+{'key': 'value', 'key1': 1.1, 'key2': 2.2, 'key3': 3.3, 'key4': 4.4}
+In [9]:
+ditrcd.items()
+Out[9]:
+dict_items([('Name', 'Manglesh'), ('age', 23), ('email', 'manglesh007@gmail.com')])
+In [18]:
+dit.popitem()
+Out[18]:
+('key4', 4.4)
+In [20]:
+dit.pop("key1")
+Out[20]:
+1.1
+In [22]:
+ditrcd.setdefault("key1")
+In [23]:
+ditrcd
+Out[23]:
+{'Name': 'Manglesh', 'age': 23, 'email': 'manglesh007@gmail.com', 'key1': None}
+In [30]:
+ditrcd.update(ditrcd)
+In [29]:
+dit
+Out[29]:
+{'key': 'value', 'key2': 2.2, 'key3': 3.3}
+In [31]:
+ditrcd
+Out[31]:
+{'Name': 'Manglesh',
+ 'age': 23,
+ 'email': 'manglesh007@gmail.com',
+ 'key1': None,
+ 'key': 'value',
+ 'key2': 2.2,
+ 'key3': 3.3}
