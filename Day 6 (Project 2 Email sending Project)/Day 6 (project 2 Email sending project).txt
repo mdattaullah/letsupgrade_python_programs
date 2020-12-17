@@ -1,0 +1,73 @@
+!pip install emails
+Collecting emails
+  Downloading https://files.pythonhosted.org/packages/55/7e/b648d640d88d31de49e566832aca9cce025c52d6349b0a0fc65e9df1f4c5/emails-0.6-py2.py3-none-any.whl (56kB)
+     |████████████████████████████████| 61kB 4.7MB/s 
+Requirement already satisfied: lxml in /usr/local/lib/python3.6/dist-packages (from emails) (4.2.6)
+Collecting premailer
+  Downloading https://files.pythonhosted.org/packages/cd/ce/74bbdf0eee4265fd3f161d4276b36c9238b802191c2053c8e68578bda4e6/premailer-3.7.0-py2.py3-none-any.whl
+Requirement already satisfied: requests in /usr/local/lib/python3.6/dist-packages (from emails) (2.23.0)
+Requirement already satisfied: python-dateutil in /usr/local/lib/python3.6/dist-packages (from emails) (2.8.1)
+Collecting cssutils
+  Downloading https://files.pythonhosted.org/packages/6b/15/a9fb9010f58d1c55dd0b7779db2334feb9a572d407024f39a60f44293861/cssutils-1.0.2-py3-none-any.whl (406kB)
+     |████████████████████████████████| 409kB 13.0MB/s 
+Requirement already satisfied: chardet in /usr/local/lib/python3.6/dist-packages (from emails) (3.0.4)
+Collecting cssselect
+  Downloading https://files.pythonhosted.org/packages/3b/d4/3b5c17f00cce85b9a1e6f91096e1cc8e8ede2e1be8e96b87ce1ed09e92c5/cssselect-1.1.0-py2.py3-none-any.whl
+Requirement already satisfied: cachetools in /usr/local/lib/python3.6/dist-packages (from premailer->emails) (4.1.1)
+Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.6/dist-packages (from requests->emails) (2.10)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /usr/local/lib/python3.6/dist-packages (from requests->emails) (1.24.3)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.6/dist-packages (from requests->emails) (2020.12.5)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.6/dist-packages (from python-dateutil->emails) (1.15.0)
+Installing collected packages: cssselect, cssutils, premailer, emails
+Successfully installed cssselect-1.1.0 cssutils-1.0.2 emails-0.6 premailer-3.7.0
+In [8]:
+import emails
+html_body = '''<p><span style='font-family: "Comic Sans MS", sans-serif;'>HI Every one,</span></p>
+<p><span style="font-family: Comic Sans MS, sans-serif;">This is ME.</span></p>
+<p><span style="font-family: Comic Sans MS, sans-serif;">Who is writing the mail to you is me .</span></p>
+<p><span style="font-family: Comic Sans MS, sans-serif;">But the mail id is mine.</span></p>
+<p><span style="font-family: Comic Sans MS, sans-serif;">But it was written by my friend.</span></p>
+<p><span style="font-family: Comic Sans MS, sans-serif;"><br></span></p>
+<p><span style="font-family: Comic Sans MS, sans-serif;"><span style="color: rgb(184, 49, 47);"></span><span style="color: rgb(184, 49, 47); background-color: rgb(239, 239, 239);"><strong>Thanks to GOOGLE,</strong></span></span></p>
+<p><span style="background-color: rgb(239, 239, 239);"><strong><span style="color: rgb(184, 49, 47);"><span style="font-family: Comic Sans MS, sans-serif;">It is a nice oppurtunity,</span></span></strong></span></p>
+<p><span style="font-family: Comic Sans MS, sans-serif;"><span style="color: rgb(184, 49, 47); background-color: rgb(239, 239, 239);"><strong>Have a nice day,</strong></span></span></p>
+<p><strong><span style='font-family: "Comic Sans MS", sans-serif;'>From ME to YOU.</span></strong></p>'''
+message = emails.html(html=html_body,
+                          subject="Hai friendz!!",
+                          mail_from=('Arey enti edhi', 'areyenti@.com'))
+mail = message.send(to='cehat15431@95ta.com', 
+                    smtp={'host': 'smtp.gmail.com', 
+                          'timeout': 5, 
+                          'port' : 587,
+                          'user': 'pahnaiphani456@gmail.com',
+                          'password': 'pythonlang',
+                          'tls':True})
+In [ ]:
+mail.status_code
+Out[ ]:
+250
+In [9]:
+def send_the_mail(gmail, name):
+  html_body= '''<p><span style='font-family: "Times New Roman", Times, serif; font-size: 19px;'>Hey ,'''+ name +'''</span></p>
+                <p><span style="font-size: 19px;"><span style="font-family: 'Times New Roman', Times, serif;">Do you want to learn python??</span></span></p>
+                <p><span style="font-size: 19px;"><span style="font-family: 'Times New Roman', Times, serif;">Then join the community if LetsUpgrade.</span></span></p>
+                <p><span style="font-size: 19px;"><span style="font-family: 'Times New Roman', Times, serif;">It was wonderful platform to learn the skills like python, cyber security and ethical hacking, block chain and RPA soon.....</span></span></p>
+                <p><span style="font-size: 19px;"><span style='font-family: "Times New Roman", Times, serif; text-shadow: rgba(136, 136, 136, 0.8) 9px 4px 5px;'><strong><span style="color: rgb(250, 197, 28);">Thank you for reading.</span></strong></span></span></p>
+                <p><span style="text-shadow: 9px 4px 5px rgba(136, 136, 136, 0.8);"><span style="font-size: 19px;"><span style="font-family: 'Times New Roman', Times, serif;"><span style="color: rgb(250, 197, 28);"><strong>From ,</strong></span></span></span></span></p>
+                <p><strong><span style='color: rgb(250, 197, 28); font-family: "Times New Roman", Times, serif; font-size: 19px; text-shadow: rgba(136, 136, 136, 0.8) 9px 4px 5px;'>LetsUpgrade Team.</span></strong></p>'''
+  
+  subject = 'Hai ' + name + ', You are amazing'
+  message = emails.html(html=html_body ,
+                          subject=subject,
+                          mail_from=('Google', 'Googlesending@mail.com'))
+  mail = message.send(to= gmail, 
+                    smtp={'host': 'smtp.gmail.com', 
+                          'timeout': 5, 
+                          'port' : 587,
+                          'user': 'pahnaiphani456@gmail.com',
+                          'password': 'pythonlang',
+                          'tls':True})
+send_the_mail('cehat15431@95ta.com', 'Phani')
+mail.status_code
+Out[9]:
+250
