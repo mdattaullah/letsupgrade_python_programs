@@ -1,0 +1,30 @@
+In [2]:
+pip install pytube
+Collecting pytube
+  Downloading pytube-10.0.0-py3-none-any.whl (40 kB)
+Requirement already satisfied: typing-extensions in c:\programdata\anaconda3\lib\site-packages (from pytube) (3.7.4.2)
+Installing collected packages: pytube
+Successfully installed pytube-10.0.0
+Note: you may need to restart the kernel to use updated packages.
+In [2]:
+from tkinter import *
+In [ ]:
+from pytube import YouTube
+root=Tk()
+
+root.geometry("600x300+200+200")
+root.title("YouTube Video Downloader")
+root.configure(background="#F5F5F5")
+root.resizable(width=False, height=False)
+def Youtube():
+    link=var.get()
+    ytubevideo=YouTube(link).streams.filter(file_extension='mp4').order_by('resolution').desc().first()
+    ytubevideo.download("H:\\Lets Upgrade\\Python")
+l1=Label(root,text="YouTube Video Link",fg="red",font=("bold",10))
+l1.place(x=90,y=100)
+var=StringVar()
+e1=Entry(root,textvariable=var,width=60)
+e1.place(x=220,y=100)
+b1=Button(root,text="Download",bg="Green",width=10,fg="White", command=Youtube)
+b1.place(x=350,y=140)
+root.mainloop()
